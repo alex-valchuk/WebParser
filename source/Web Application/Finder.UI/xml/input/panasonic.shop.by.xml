@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<SearchItem>
+	<!-- http address fro search -->
+	<Path>http://panasonic.shop.by/</Path>
+	<!-- Regex for common blok -->
+	<CommonPattern>&lt;h3\s*&gt;.*?@SearchText@.*?&lt;/h3&gt;(.|\s)*?&lt;div\s*class\s*=\s*("|'|)desc("|'|)(.|\s)*?&lt;/div&gt;</CommonPattern>
+	<!-- Title -->
+	<Title>&lt;h3\s*&gt;.*?@SearchText@.*?&lt;/h3&gt;</Title>
+	<!-- Image -->
+	<Image>&lt;div\s*class\s*=\s*("|'|)img("|'|)(.|\s')*?&lt;/div&gt;</Image>
+	<!-- Prices -->
+	<Prices>
+		<!-- Price(Dollar) -->
+		<Price>&lt;span\s*class\s*=\s*("|'|)usd("|'|)(.|\s)*?[0-9]+\s*у\.е\.&lt;/span&gt;</Price>
+		<!-- Price(Rouble) -->
+		<Price>&lt;span(.|\s)*?\[\s*[0-9\s]*руб(\.| )*\](.|\s)*?&lt;/span&gt;</Price>
+	</Prices>
+	<!-- Description -->
+	<Description>&lt;div\s*class\s*=\s*("|'|)desc("|'|)(.|\s)*?&lt;/div&gt;</Description>
+</SearchItem>

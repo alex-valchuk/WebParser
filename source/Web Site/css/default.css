@@ -1,0 +1,33 @@
+﻿body
+{
+}
+
+.hat
+{
+	background-image: url(../images/hat.jpg);
+	background-repeat:repeat-x;
+	width:auto;
+	height:30px;
+}
+
+.left
+{
+	float:left;
+	width:600px;
+	border: solid 1px gray;
+}
+
+.help
+{
+	padding: 20px 0px 0px 5px;
+	font-weight:bold;
+	font-size:16px;
+	cursor:pointer;
+}
+
+.count
+{
+	color:#03763c;
+	padding-left:10px;
+	font-weight:bold;
+}

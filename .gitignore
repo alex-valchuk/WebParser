@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+source/Web Application/Finder.Lib/bin/
+source/Web Application/Finder.Lib/obj/
+source/Web Application/Finder.UI/bin/
+source/Web Application/Finder.UI/obj/
+*.user

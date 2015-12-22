@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<SearchItem>
+	<!-- http address fro search -->
+	<Path>http://adimax.by/</Path>
+	<!-- excluded http addresses -->
+	<ExcludedPathList />
+	<!-- Regex for common blok -->
+	<CommonPattern>&lt;div\s*class\s*=\s*("|'|)cataloginternal("|'|)(.|\s)*?&gt;(.|\s)*?@SearchText@(.|\s)*?&lt;div\s*class\s*=\s*("|'|)notes("|'|)(.|\s)*?&lt;/div&gt;</CommonPattern>
+	<!-- Title -->
+	<Title>(?&lt;=&lt;td\s*class\s*=\s*("|'|)title("|'|)&gt;).*?@SearchText@.*?(?=&lt;td)</Title>
+	<!-- Image -->
+	<Image>(?&lt;=url\s*\(\s*[""']?)(http://)?(www\.)?adimax.by/.*?(?=[)])</Image>
+	<!-- Prices -->
+	<Prices>
+		<!-- Price(Rouble) -->
+		<Price>(?&lt;=&lt;td(.|\s)*?class\s*=\s*("|'|)price("|'|)>)(.|\s)*?(?=&lt;/td&gt;)</Price>
+	</Prices>
+	<!-- Description -->
+	<Description>(?&lt;=notes["']?.*?&gt;)(.|\s)*?(?=&lt;/div&gt;)</Description>
+</SearchItem>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SearchItem>
+	<!-- http address from search -->
+	<Path>http://24shop.by/</Path>
+	<!-- excluded http addresses -->
+	<ExcludedPathList>
+		<!-- address for compare -->
+		<ExcludedPath>http://24shop.by/compare/</ExcludedPath>
+	</ExcludedPathList>
+	<!-- Regex for common blok -->
+	<CommonPattern>&lt;div\s*class\s*=\s*("|'|)img_item("|'|)(.|\s)*?&gt;.*?@SearchText@.*?&lt;/div&gt;(.|\s)*?&lt;div\s*class\s*=\s*("|'|)desc_item("|'|)(.|\s)*?&lt;/div&gt;</CommonPattern>
+	<!-- Title -->
+	<Title>(?&lt;=tovarhead("|'|)&gt;).*?@SearchText@.*?(?=&lt;/h1&gt;)</Title>
+	<!-- Image -->
+	<Image>(?&lt;=src\s*=\s*["']?)(http://)?(www\.)?24shop.by/.*?(?=["']? )</Image>
+	<!-- Prices -->
+	<Prices>
+		<!-- Price(Dollar) -->
+		<Price>(?&lt;=купить["']?&gt;)(.|\s)*?(?=&lt;span&gt;)</Price>
+		<!-- Price(Rouble) -->
+		<Price>(?&lt;=[(])[0-9\s]*?руб\.(?=[)])</Price>
+	</Prices>
+	<!-- Description -->
+	<Description>(?&lt;=desc_item["']?.*?&gt;)(.|\s)*?(?=&lt;/div&gt;)</Description>
+</SearchItem>

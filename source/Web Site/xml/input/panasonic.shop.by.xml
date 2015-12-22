@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<SearchItem>
+	<!-- http address fro search -->
+	<Path>http://panasonic.shop.by/</Path>
+	<!-- excluded http addresses -->
+	<ExcludedPathList />
+	<!-- Regex for common blok -->
+	<CommonPattern>&lt;h3\s*&gt;.*?@SearchText@.*?&lt;/h3&gt;(.|\s)*?&lt;div\s*class\s*=\s*("|'|)desc("|'|)(.|\s)*?&lt;/div&gt;</CommonPattern>
+	<!-- Title -->
+	<Title>(?&lt;=h3&gt;).*?@SearchText@.*?(?=&lt;/h3&gt;)</Title>
+	<!-- Image -->
+	<Image>(?&lt;=src\s*=\s*["']?)(http://)?(www\.)?panasonic.shop.by/.*?(?=["']? )</Image>
+	<!-- Prices -->
+	<Prices>
+		<!-- Price(Dollar) -->
+		<Price>[0-9\s]*?у\.е\.</Price>
+		<!-- Price(Rouble) -->
+		<Price>[0-9\s]*?руб\.</Price>
+	</Prices>
+	<!-- Description -->
+	<Description>(?&lt;=desc["']?.*?&gt;)(.|\s)*?(?=&lt;/div&gt;)</Description>
+</SearchItem>
